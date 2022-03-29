@@ -221,7 +221,15 @@ class Exercises{
             }
             13 -> {
                 try{
+                    val X = 144f
+                    val Y = 999f
 
+                    println("X = $X")
+                    println("Y = $Y")
+                    println("X + Y = ${X.plus(Y)}")
+                    println("X - Y = ${X.minus(Y)},\t Y - X = ${Y.minus(X)}")
+                    println("X * Y = ${X.times(Y)}")
+                    println("X / Y = ${X.div(Y)},\t Y / X = ${Y.div(X)}")
                 }catch (e: Exception){
                     println("\n\n\n\n\n\n\n\n\n\n\n")
                     main(Number)
@@ -229,7 +237,11 @@ class Exercises{
             }
             14 -> {
                 try{
+                    val Name = "Juan Carlos Pérez"
+                    val Address = "Ciudad Sandino 123"
+                    val PhoneNumber = "85859090 - Tigo"
 
+                    println(calculatedNameAdressPhoneNumber(Name, Address, PhoneNumber))
                 }catch (e: Exception){
                     println("\n\n\n\n\n\n\n\n\n\n\n")
                     main(Number)
@@ -237,7 +249,10 @@ class Exercises{
             }
             15 -> {
                 try{
+                    val ArrayOfNumbers = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
+                    println("Valores del array: $ArrayOfNumbers")
+                    println("(Promedio, Suma) : ${calculateAverageAndSum(ArrayOfNumbers)}")
                 }catch (e: Exception){
                     println("\n\n\n\n\n\n\n\n\n\n\n")
                     main(Number)
@@ -245,7 +260,13 @@ class Exercises{
             }
             16 -> {
                 try{
+                    val Number1 = 10f
+                    val Number2 = 5f
+                    val Number3 = 20f
 
+                    println("Suma: " + (Number1 + Number2 + Number3)
+                            + "\nPromedio " + ((Number1 + Number2 + Number3)/3)
+                            + "\nMultiplicación: " + (Number1 * Number2 * Number3))
                 }catch (e: Exception){
                     println("\n\n\n\n\n\n\n\n\n\n\n")
                     main(Number)
@@ -403,4 +424,21 @@ class Exercises{
         return list
     }
 
+    fun calculatedNameAdressPhoneNumber(name: String, address: String, phonenumber: String): String {
+        return "Nombre: $name\nDireccion: $address\nTelefono: $phonenumber"
+    }
+
+    fun calculateAverageAndSum(list: List<Int>): Pair<Float, Int> {
+
+        var sum = 0
+        var average : Float?
+
+        for(i in list){
+            sum += i
+        }
+
+        average = sum.toFloat() / list.size
+
+        return Pair(average, sum)
+    }
 }
