@@ -1,7 +1,7 @@
 fun main() {
 
     try {
-        var Number : Int = 0
+        var Number = 0
         var exercise = Exercises()
 
         while(Number != 23 ){
